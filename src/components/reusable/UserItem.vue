@@ -1,5 +1,5 @@
 <template>
-  <div class="user-item" v-if="user">
+  <div class="user-item" v-if="user" @click="goToSingleUser(user.login.uuid)">
     <div class="user-image">
       <img :src="user.picture.large" />
     </div>
@@ -17,6 +17,11 @@ export default {
     user: {
       type: Object,
       required: true
+    }
+  },
+  methods: {
+    goToSingleUser(uuid) {
+      this.$router.push(`/user/${uuid}`)
     }
   }
 }

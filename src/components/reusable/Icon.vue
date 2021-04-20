@@ -1,5 +1,5 @@
 <template>
-  <img :alt="name" :src="require(`../../assets/${name}.svg`)">
+  <img :class="className" :alt="name" :src="require(`../../assets/${name}.svg`)" @click="$emit('click')">
 </template>
 
 <script>
@@ -9,6 +9,10 @@ export default {
     name: {
       type: String,
       required: true
+    },
+    className: {
+      type: String,
+      required: false
     }
   }
 }
