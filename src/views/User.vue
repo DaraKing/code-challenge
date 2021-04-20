@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div v-if="user">
     <Icon class-name="back-icon" name="back-icon" @click="$router.go(-1)" />
 
-    <div class="user-details" v-if="user && user.picture">
+    <div class="user-details" v-if="user.picture">
       <img :src="user.picture.large" />
 
       <p class="name">{{user.name.title}} {{user.name.first}} {{user.name.last}}</p>
